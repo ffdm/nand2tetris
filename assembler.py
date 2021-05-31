@@ -1,3 +1,5 @@
+#This assembler converts hack assembly code into machine language. Arguments: assembler.py program.asm outputfilename
+
 import sys
 
 def convert_to_binary(value):
@@ -163,7 +165,7 @@ def main():
 	output=""
 	for command in contents:
 		output+=command+"\n"
-	with open("testfile.hack", "w") as f:
+	with open(sys.argv[2]+".hack", "w") as f:
 		f.write(output)
 	
 if __name__ == '__main__':
